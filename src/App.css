@@ -1,0 +1,45 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #222;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: crimson;
+  padding: 25px;
+  text-align: center;
+}
+
+.header h1 {
+  color: white;
+  margin: 0;
+}
+
+.main {
+  width: 90%;
+  max-width: 750px;
+  margin: 30px auto;
+  flex: 1;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 18px;
+}
