@@ -1,7 +1,6 @@
 
 import "./App.css";
 
-// Topic 2: Guest component
 function Guest({ name, seat }) {
   return (
     <div className="guest">
@@ -12,6 +11,13 @@ function Guest({ name, seat }) {
 }
 
 function App() {
+  // Topic 3: Guest array
+  const guests = [
+    { name: "Sara", seat: 4 },
+    { name: "Omar", seat: 9 },
+    { name: "Hina", seat: 2 },
+  ];
+
   return (
     <div className="app">
       <header className="header">
@@ -19,10 +25,17 @@ function App() {
       </header>
 
       <main className="main">
-        <h2>Welcome to Hostel Store</h2>
+        <h2>Guest Wall</h2>
 
-        <h2>Guest Example</h2>
-        <Guest name="Sara" seat={4} />
+        <div className="wall">
+          {guests.map((guest) => (
+            <Guest
+              key={guest.name}
+              name={guest.name}
+              seat={guest.seat}
+            />
+          ))}
+        </div>
       </main>
 
       <footer className="footer">
