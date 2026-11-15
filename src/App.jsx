@@ -32,11 +32,17 @@ function App() {
   // Topic 5, 7 and 8: Find guest
   function handleFind(event) {
     event.preventDefault();
+    const searchName = name.trim();
+
+if (searchName === "") {
+  setMessage("Type a name");
+  return;
+}
 
     const foundGuest = guests.find(
-      (guest) =>
-        guest.name.toLowerCase() === name.trim().toLowerCase()
-    );
+  (guest) =>
+    guest.name.toLowerCase() === searchName.toLowerCase()
+);
 
     if (foundGuest) {
       setSelectedGuest(foundGuest);
