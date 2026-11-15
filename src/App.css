@@ -82,3 +82,8 @@ button {
   padding: 10px;
   border-radius: 6px;
 }
+.message {
+  color: #dc2626;
+  font-weight: bold;
+  min-height: 20px;
+}
