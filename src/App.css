@@ -76,3 +76,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+.card {
+  min-height: 65px;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  border-radius: 6px;
+}

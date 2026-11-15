@@ -20,7 +20,9 @@ function App() {
 
   const [name, setName] = useState("");
 
-  // Topic 5: Find function
+  // Topic 6: Result card state
+  const [selectedGuest, setSelectedGuest] = useState(null);
+
   function handleFind(event) {
     event.preventDefault();
 
@@ -28,7 +30,11 @@ function App() {
       (guest) => guest.name === name
     );
 
-    console.log(foundGuest);
+    if (foundGuest) {
+      setSelectedGuest(foundGuest);
+    } else {
+      setSelectedGuest(null);
+    }
   }
 
   return (
@@ -58,6 +64,17 @@ function App() {
 
           <button type="submit">Find</button>
         </form>
+
+        <h2>Guest Card</h2>
+
+        <div className="card">
+          {selectedGuest && (
+            <Guest
+              name={selectedGuest.name}
+              seat={selectedGuest.seat}
+            />
+          )}
+        </div>
       </main>
 
       <footer className="footer">
