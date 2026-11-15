@@ -26,7 +26,6 @@ function App() {
   // Topic 6: Result card state
   const [selectedGuest, setSelectedGuest] = useState(null);
 
-  // Topic 8: Message state
   const [message, setMessage] = useState("");
 
   // Topic 5, 7 and 8: Find guest
