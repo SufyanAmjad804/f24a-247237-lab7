@@ -27,8 +27,9 @@ function App() {
     event.preventDefault();
 
     const foundGuest = guests.find(
-      (guest) => guest.name === name
-    );
+  (guest) =>
+    guest.name.toLowerCase() === name.trim().toLowerCase()
+);
 
     if (foundGuest) {
       setSelectedGuest(foundGuest);
