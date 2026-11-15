@@ -43,3 +43,11 @@ body {
   text-align: center;
   padding: 18px;
 }
+.guest {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
