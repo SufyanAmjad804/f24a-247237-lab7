@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import "./App.css";
 
 function Guest({ name, seat }) {
@@ -11,12 +12,14 @@ function Guest({ name, seat }) {
 }
 
 function App() {
-  // Topic 3: Guest array
   const guests = [
     { name: "Sara", seat: 4 },
     { name: "Omar", seat: 9 },
     { name: "Hina", seat: 2 },
   ];
+
+  // Topic 4: Controlled input
+  const [name, setName] = useState("");
 
   return (
     <div className="app">
@@ -29,13 +32,18 @@ function App() {
 
         <div className="wall">
           {guests.map((guest) => (
-            <Guest
-              key={guest.name}
-              name={guest.name}
-              seat={guest.seat}
-            />
+            <Guest key={guest.name} name={guest.name} seat={guest.seat} />
           ))}
         </div>
+
+        <h2>Find a Guest</h2>
+
+        <input
+          type="text"
+          placeholder="Enter guest name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
       </main>
 
       <footer className="footer">
