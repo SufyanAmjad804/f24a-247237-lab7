@@ -18,8 +18,18 @@ function App() {
     { name: "Hina", seat: 2 },
   ];
 
-  // Topic 4: Controlled input
   const [name, setName] = useState("");
+
+  // Topic 5: Find function
+  function handleFind(event) {
+    event.preventDefault();
+
+    const foundGuest = guests.find(
+      (guest) => guest.name === name
+    );
+
+    console.log(foundGuest);
+  }
 
   return (
     <div className="app">
@@ -38,12 +48,16 @@ function App() {
 
         <h2>Find a Guest</h2>
 
-        <input
-          type="text"
-          placeholder="Enter guest name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
+        <form onSubmit={handleFind}>
+          <input
+            type="text"
+            placeholder="Enter guest name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+
+          <button type="submit">Find</button>
+        </form>
       </main>
 
       <footer className="footer">
